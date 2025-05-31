@@ -1,0 +1,37 @@
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+}
+
+/* Zapobiegaj rozciąganiu */
+.ant-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+}
+
+/* Zmniejsz padding komórek na małych ekranach */
+@media (max-width: 768px) {
+    .ant-table-cell {
+        padding: 4px !important;
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .ant-table-thead > tr > th {
+        padding: 4px !important;
+        font-size: 10px;
+    }
+
+    .ant-table {
+        font-size: 10px;
+    }
+}

@@ -12,7 +12,7 @@ export const ResultsProvider = ({ children }) => {
 
     const fetchResults = useCallback(async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/results');
+            const response = await axios.get(process.env.REACT_APP_API_URL+'/api/results');
             const data = response.data;
             setResults(data.results);
             setGroups(data.groups);

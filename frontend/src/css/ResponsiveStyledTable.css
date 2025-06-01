@@ -22,17 +22,30 @@
 @media (max-width: 768px) {
     .ant-table-cell {
         padding: 4px !important;
-        font-size: 10px;
+        font-size: 9px;
         white-space: normal;
 
     }
 
     .ant-table-thead > tr > th {
         padding: 4px !important;
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .ant-table {
+        font-size: 9px;
+    }
+    .responsive-card {
+        width: 140px;
         font-size: 10px;
+        padding: 8px;
+    }
+
+    .responsive-card .ant-card-head-title {
+        font-size: 11px;
+    }
+
+    .responsive-card p {
+        margin: 4px 0;
     }
 }

@@ -56,13 +56,13 @@ const LiveScoreboard = () => {
 
     return (
         <div style={{ maxWidth: 1000, margin: '0 auto', padding: 24 }}>
-            <Title level={2} style={{ textAlign: 'center' }}>Aktualnie oceniani zawodnicy</Title>
+            <Title level={3} style={{ textAlign: 'center' }}>Aktualnie oceniani zawodnicy</Title>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center' }}>
                 {activeEvaluations.length === 0 ? (
                     <Text type="secondary">Brak aktywnych ocen.</Text>
                 ) : (
                     activeEvaluations.map((p, index) => (
-                        <Card key={index} title={p.name} bordered style={{ width: 200 }}>
+                        <Card className="responsive-card" key={index} title={p.name} bordered style={{ width: 200 }}>
                             <p><strong>Zastęp:</strong> {p.team}</p>
                             <p><strong>Kategoria:</strong> {p.category}</p>
                             <p><strong>Przyrząd:</strong> {p.app}</p>

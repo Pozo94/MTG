@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 
 const { Title } = Typography;
 
-const socket = io('http://localhost:5000'); // <- dostosuj adres jeśli inny
+const socket = io(process.env.REACT_APP_API_URL); // <- dostosuj adres jeśli inny
 
 const ResultsPage = () => {
     const { results, groups, categories, lastUpdated, fetchResults } = useResults();

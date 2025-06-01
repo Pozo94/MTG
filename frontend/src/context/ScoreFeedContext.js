@@ -5,7 +5,7 @@ const ScoreFeedContext = createContext();
 
 export const useScoreFeed = () => useContext(ScoreFeedContext);
 
-const socket = io('http://localhost:5000'); // dostosuj URL jeśli inny
+const socket = io(process.env.REACT_APP_API_URL); // dostosuj URL jeśli inny
 const scoreToApp = {
     FX:"Ćw. Wolne",
     VT:"Skok",

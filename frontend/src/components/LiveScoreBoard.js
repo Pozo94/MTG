@@ -25,7 +25,7 @@ const LiveScoreboard = () => {
         {
             title: 'Przyrząd',
             dataIndex: 'app',
-            key: 'app',
+            key: 'scoreKey',
             align: 'center',
         },
         {

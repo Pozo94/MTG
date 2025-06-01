@@ -48,7 +48,9 @@ io.on('connection', (socket) => {
 
     });
     socket.on('scoreAdded', (scoreObj) => {
+        console.log(scoreObj.scoreKey)
         scoreObj.scoreKey=App_MAP[scoreObj.scoreKey]
+
         latestScores.unshift(scoreObj);
         latestScores = latestScores.slice(0, 12);
         io.emit('scoreAdded', scoreObj);

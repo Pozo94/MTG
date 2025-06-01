@@ -47,8 +47,8 @@ io.on('connection', (socket) => {
         io.emit('scoreAdded', scoreObj);
     });
     // Wyślij aktualny stan po połączeniu
-    socket.broadcast.emit('activeEvaluations', activeEvaluations);
-    socket.broadcast.emit('latestScores', latestScores);
+    socket.emit('activeEvaluations', activeEvaluations);
+    socket.emit('latestScores', latestScores);
 
 });
 

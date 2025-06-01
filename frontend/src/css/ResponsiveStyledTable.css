@@ -24,6 +24,7 @@
         padding: 4px !important;
         font-size: 10px;
         white-space: normal;
+        align-content: center;
     }
 
     .ant-table-thead > tr > th {

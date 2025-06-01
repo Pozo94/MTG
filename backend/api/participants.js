@@ -42,14 +42,7 @@ router.put('/:_id', async (req, res) => {
         const app=App_MAP[scoreKey];
         if (io) {
             io.emit('scoresUpdated');
-            io.emit('scoreAdded', {
-                participantId: participant._id,
-                name: participant.name,
-                category:participant.category,
-                app,
-                score: participant[scoreKey],
-                timestamp: Date.now()
-            });
+
         }
 
         res.status(200).json({ message: 'Zawodnik zaktualizowany pomyślnie.' });

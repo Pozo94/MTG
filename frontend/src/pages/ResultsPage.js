@@ -17,7 +17,6 @@ const ResultsPage = () => {
 
     useEffect(() => {
         socket.on('scoresUpdated', () => {
-            console.log('Odebrano event WebSocket: scoresUpdated');
             fetchResults();
         });
         return () => {

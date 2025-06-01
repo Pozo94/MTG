@@ -10,6 +10,8 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app); // <-- używamy do socket.io
+let latestScores = [];
+let activeEvaluations = [];
 const io = socketIo(server, {
     cors: {
         origin: '*',
@@ -30,13 +32,24 @@ app.use('/api/results', resultsRoutes);
 io.on('connection', (socket) => {
 
     socket.on('evaluationStarted', ( participant ) => {
+        activeEvaluations.push(participant);
         socket.broadcast.emit('evaluationStarted', { ...participant});
 
     });
     socket.on('evaluationEnded', (id) => {
+        activeEvaluations = activeEvaluations.filter(p => p._id !== id);
         socket.broadcast.emit('evaluationEnded', id);
 
     });
+    socket.on('scoreAdded', (scoreObj) => {
+        latestScores.unshift(scoreObj);
+        latestScores = latestScores.slice(0, 12);
+        io.emit('scoreAdded', scoreObj);
+    });
+    // Wyślij aktualny stan po połączeniu
+    socket.broadcast.emit('activeEvaluations', activeEvaluations);
+    socket.broadcast.emit('latestScores', latestScores);
+
 });
 
 // Przekazujemy instancję io do aplikacji — można użyć w routerach np. przez req.app.get('io')

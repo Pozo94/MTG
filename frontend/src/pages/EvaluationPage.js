@@ -125,7 +125,7 @@ const ResultsByTeamPage = () => {
         };
 
         try {
-            await fetch(`http://localhost:5000/api/participants/${selectedParticipant._id}`, {
+            await fetch(`${process.env.REACT_APP_API_URL}/api/participants/${selectedParticipant._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ scoreKey, score: updatedScore })

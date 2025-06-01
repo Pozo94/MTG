@@ -31,8 +31,13 @@ export const ScoreFeedProvider = ({ children }) => {
         socket.on('evaluationEnded', (participantId) => {
             setActiveEvaluations((prev) => prev.filter(p => p._id !== participantId));
         });
+        socket.on('activeEvaluations', (currentList) => {
+            setActiveEvaluations(currentList);
+        });
+
 
         return () => {
+            socket.off('activeEvaluations');
             socket.off('scoreAdded');
             socket.off('latestScores');
             socket.off('evaluationStarted');

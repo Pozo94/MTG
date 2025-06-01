@@ -30,9 +30,11 @@
     .ant-table-thead > tr > th {
         padding: 4px !important;
         font-size: 10px;
+        align-content: center;
     }
 
     .ant-table {
         font-size: 10px;
+        align-content: center;
     }
 }

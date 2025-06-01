@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Typography, Divider, Table } from 'antd';
 import { useScoreFeed } from '../context/ScoreFeedContext';
-import {StyledTable} from "./StyledTable";
 import '../css/ResponsiveStyledTable.css';
 
 const { Title, Text } = Typography;
@@ -72,11 +71,15 @@ const LiveScoreboard = () => {
             {latestScores.length === 0 ? (
                 <Text type="secondary" style={{ display: 'block', textAlign: 'center' }}>Brak ocen.</Text>
             ) : (
-                <Table
-                    dataSource={latestScores.map((item, index) => ({ key: index, ...item }))}
-                    columns={columns}
-                    pagination={false}
-                />
+                <div className="table-container">
+                    <div className="table-wrapper">
+                        <Table
+                            dataSource={latestScores.map((item, index) => ({ key: index, ...item }))}
+                            columns={columns}
+                            pagination={false}
+                        />
+                    </div>
+                </div>
             )}
         </div>
     );

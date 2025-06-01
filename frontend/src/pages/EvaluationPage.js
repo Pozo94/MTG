@@ -141,7 +141,6 @@ const ResultsByTeamPage = () => {
             category: selectedParticipant.category,
             team: selectedParticipant.team,
             group: selectedParticipant.group,
-            judge: user?.username,
             scoreKey,
             score: updatedScore
         });

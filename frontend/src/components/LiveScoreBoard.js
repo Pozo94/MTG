@@ -14,25 +14,30 @@ const LiveScoreboard = () => {
             title: 'Zawodnik',
             dataIndex: 'name',
             key: 'name',
+            align: 'center',
         },
         {
             title: 'Kategoria',
             dataIndex: 'category',
             key: 'category',
+            align: 'center',
         },
         {
             title: 'Przyrząd',
             dataIndex: 'app',
             key: 'app',
+            align: 'center',
         },
         {
             title: 'Ocena Baza',
             dataIndex: ['score', 'base'],
             key: 'base',
+            align: 'center',
         },
         {
             title: 'Błędy',
             key: 'errors',
+            align: 'center',
             render: (_, record) => {
                 const { errors, errors2 } = record.score;
                 if (errors2 != null) {
@@ -45,6 +50,7 @@ const LiveScoreboard = () => {
             title: 'Ocena końcowa',
             dataIndex: ['score', 'total'],
             key: 'total',
+            align: 'center',
         },
     ];
 
@@ -59,7 +65,7 @@ const LiveScoreboard = () => {
                         <Card key={index} title={p.name} bordered style={{ width: 200 }}>
                             <p><strong>Zastęp:</strong> {p.team}</p>
                             <p><strong>Kategoria:</strong> {p.category}</p>
-                            <p><strong>Przyrząd:</strong> {p.app}</p>
+                            <p><strong>Przyrząd:</strong> {p.scoreKey}</p>
                         </Card>
                     ))
                 )}

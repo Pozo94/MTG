@@ -1,12 +1,7 @@
 const express = require('express');
 const Participant = require('../models/participant');
 const router = express.Router();
-const App_MAP = {
-    score1: "Ćw. Wolne",
-    score2: "Skok",
-    score3:"Dodatkowy przyrząd",
 
-};
 
 
 router.put('/:_id', async (req, res) => {
@@ -39,7 +34,6 @@ router.put('/:_id', async (req, res) => {
 
         await participant.save();
         const io = req.app.get('io');
-        const app=App_MAP[scoreKey];
         if (io) {
             io.emit('scoresUpdated');
 

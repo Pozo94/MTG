@@ -12,6 +12,12 @@ const app = express();
 const server = http.createServer(app); // <-- używamy do socket.io
 let latestScores = [];
 let activeEvaluations = [];
+const App_MAP = {
+    score1: "Ćw. Wolne",
+    score2: "Skok",
+    score3:"Dodatkowy przyrząd",
+
+};
 const io = socketIo(server, {
     cors: {
         origin: '*',
@@ -42,6 +48,7 @@ io.on('connection', (socket) => {
 
     });
     socket.on('scoreAdded', (scoreObj) => {
+        scoreObj.scoreKey=App_MAP[scoreObj.scoreKey]
         latestScores.unshift(scoreObj);
         latestScores = latestScores.slice(0, 12);
         io.emit('scoreAdded', scoreObj);

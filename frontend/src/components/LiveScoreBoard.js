@@ -24,7 +24,7 @@ const LiveScoreboard = () => {
         },
         {
             title: 'Przyrząd',
-            dataIndex: 'app',
+            dataIndex: 'scoreKey',
             key: 'scoreKey',
             align: 'center',
         },
@@ -65,7 +65,7 @@ const LiveScoreboard = () => {
                         <Card key={index} title={p.name} bordered style={{ width: 200 }}>
                             <p><strong>Zastęp:</strong> {p.team}</p>
                             <p><strong>Kategoria:</strong> {p.category}</p>
-                            <p><strong>Przyrząd:</strong> {p.scoreKey}</p>
+                            <p><strong>Przyrząd:</strong> {p.app}</p>
                         </Card>
                     ))
                 )}

@@ -72,7 +72,7 @@ const LiveScoreboard = () => {
             {latestScores.length === 0 ? (
                 <Text type="secondary" style={{ display: 'block', textAlign: 'center' }}>Brak ocen.</Text>
             ) : (
-                <StyledTable
+                <Table
                     dataSource={latestScores.map((item, index) => ({ key: index, ...item }))}
                     columns={columns}
                     pagination={false}

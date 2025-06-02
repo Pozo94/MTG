@@ -62,6 +62,7 @@ io.on('connection', (socket) => {
     socket.emit('latestScores', latestScores);
     socket.on('disconnect', () => {
         if (socket.activeEvaluation) {
+            activeEvaluations = activeEvaluations.filter(p => p._id !== socket.activeEvaluation);
             socket.broadcast.emit('evaluationEnded', socket.activeEvaluation);
         }
     });

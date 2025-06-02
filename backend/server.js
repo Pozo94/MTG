@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
 
     socket.on('evaluationStarted', ( participant ) => {
         activeEvaluations.push(participant);
-        socket.activeEvaluation=participant.id;
+        socket.activeEvaluation=participant._id;
         console.log(socket.activeEvaluation)
         socket.broadcast.emit('evaluationStarted', { ...participant});
 

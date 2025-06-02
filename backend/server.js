@@ -60,9 +60,10 @@ io.on('connection', (socket) => {
     socket.emit('activeEvaluations', activeEvaluations);
     socket.emit('latestScores', latestScores);
     socket.on('disconnect', () => {
+        console.log("to się dzieje")
         if (socket.activeEvaluation) {
             socket.broadcast.emit('evaluationEnded', socket.activeEvaluation);
-
+            console.log("a czy to się dzieje");
         }
     });
 });

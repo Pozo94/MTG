@@ -39,6 +39,7 @@ io.on('connection', (socket) => {
 
     socket.on('evaluationStarted', ( participant ) => {
         activeEvaluations.push(participant);
+        socket.activeEvaluation=participant.id;
         socket.broadcast.emit('evaluationStarted', { ...participant});
 
     });
@@ -58,7 +59,12 @@ io.on('connection', (socket) => {
     // Wyślij aktualny stan po połączeniu
     socket.emit('activeEvaluations', activeEvaluations);
     socket.emit('latestScores', latestScores);
+    socket.on('disconnect', () => {
+        if (socket.activeEvaluation) {
+            socket.broadcast.emit('evaluationEnded', socket.activeEvaluation);
 
+        }
+    });
 });
 
 // Przekazujemy instancję io do aplikacji — można użyć w routerach np. przez req.app.get('io')

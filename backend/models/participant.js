@@ -7,6 +7,7 @@ const participantSchema = new mongoose.Schema({
     group: String,
     team: String,
     category:String,
+    order:Number,
     score1: {
         base: Number,
         errors: Number,

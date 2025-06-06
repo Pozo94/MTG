@@ -96,6 +96,7 @@ const RegisterPage = () => {
                             <Select.Option value="FX">FX</Select.Option>
                             <Select.Option value="VT">VT</Select.Option>
                             <Select.Option value="AD">AD</Select.Option>
+                            <Select.Option value="ADMIN">ADMIN</Select.Option>
                         </Select>
                     </Form.Item>
 

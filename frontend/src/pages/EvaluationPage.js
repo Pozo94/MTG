@@ -42,7 +42,7 @@ const ResultsByTeamPage = () => {
         if (!groupData) return [];
         return groupData.participants
             .filter(p => p.team === selectedTeam)
-            .sort((a, b) => (a.category || '').localeCompare(b.category || ''));
+            .sort((a, b) => (a.order || '').localeCompare(b.order || ''));
     };
 
     const parseLocaleFloat = (value) => {

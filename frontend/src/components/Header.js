@@ -48,6 +48,13 @@ const AppHeader = () => {
                     disabled: true,
                     style: { marginLeft: 'auto', cursor: 'default' }
                 },
+
+                ...(user?.role === 'ADMIN' ? [
+                    {
+                        key: 'register',
+                        label: <Link to="/register">Dodaj Sędziego</Link>
+                    }
+                ] : []),
                 {
                     key: 'logout',
                     label: 'Wyloguj',
@@ -59,10 +66,6 @@ const AppHeader = () => {
                     key: 'login',
                     label: <Link to="/login">Zaloguj się</Link>,
                     style: { marginLeft: 'auto' }
-                },
-                {
-                    key: 'register',
-                    label: <Link to="/register">Dodaj Sędziego</Link>
                 }
             ])
     ];

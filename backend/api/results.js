@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
                             name: "$name", // Imię zawodnika
                             team: "$team",  // Zastęp
                             category:"$category",
+                            order:"$order",
                             score1: { base: "$score1.base", errors: "$score1.errors",errors2: "$score1.errors2", total: "$score1.total" }, // Ocena z 1 kategorii
                             score2: { base: "$score2.base", errors: "$score2.errors",errors2: "$score2.errors2", total: "$score2.total" }, // Ocena z 2 kategorii
                             score3: { base: "$score3.base", errors: "$score3.errors",errors2: "$score3.errors2", total: "$score3.total" }, // Ocena z 3 kategorii

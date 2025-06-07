@@ -85,8 +85,8 @@ const ResultsPage = () => {
             p.category === selectedCategory
         );
     };
-
-    const columns = [
+    const categoriesWithSr = ['Grupa naborowa A', 'Grupa naborowa B','Grupa naborowa C'];
+    const base_columns = [
         {
             title: 'Miejsce',
             dataIndex: 'place',
@@ -116,21 +116,34 @@ const ResultsPage = () => {
             render: (obj) => (obj && typeof obj.total === 'number') ? obj.total : '–',
         },
         {
-            title: 'Dodatkowy Przyrząd',
+            title: categoriesWithSr.includes(selectedCategory) ? 'Drążek' : 'Dodatkowy Przyrząd',
             dataIndex: 'score3',
             key: 'score3',
             align: 'center',
             render: (obj) => (obj && typeof obj.total === 'number') ? obj.total : '–',
         },
-        {
-            title: 'Suma punktów',
-            dataIndex: 'totalScore',
-            key: 'totalScore',
-            align: 'center',
-            render: (value) => value ?? '–',
-        },
-    ];
 
+    ];
+     const total_column={
+         title: 'Suma punktów',
+         dataIndex: 'totalScore',
+         key: 'totalScore',
+         align: 'center',
+         render: (value) => value ?? '–',
+     }
+     const sr_column={
+         title: 'Kółka',
+         dataIndex: 'score4',
+         key: 'score4',
+         align: 'center',
+         render: (obj) => (obj && typeof obj.total === 'number') ? obj.total : '–',
+     }
+
+    const columns=[
+        ...base_columns,
+        ...(categoriesWithSr.includes(selectedCategory)? [sr_column]:[]),
+        total_column
+    ]
     const podiumResults = assignPodiumPlaces(filteredParticipants());
     return (
         <div style={{ textAlign: 'center', padding: 30 }}>

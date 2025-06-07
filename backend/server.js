@@ -15,7 +15,8 @@ let activeEvaluations = [];
 const App_MAP = {
     score1: "Ćw. Wolne",
     score2: "Skok",
-    score3:"Dodatkowy przyrząd",
+    score3: "Dodatkowy przyrząd",
+    score4: "Kółka",
 
 };
 const io = socketIo(server, {

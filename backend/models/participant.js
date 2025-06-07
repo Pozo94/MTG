@@ -26,6 +26,12 @@ const participantSchema = new mongoose.Schema({
         errors2:Number,
         total: Number,
     },
+    score4: {
+        base: Number,
+        errors: Number,
+        errors2:Number,
+        total: Number,
+    },
     totalScore: Number,
 
 });

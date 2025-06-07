@@ -10,6 +10,7 @@ const scoreToApp = {
     FX:"Ćw. Wolne",
     VT:"Skok",
     AD:"Dodatkowy przyrząd",
+    SR:"Kółka",
 };
 export const ScoreFeedProvider = ({ children }) => {
     const [latestScores, setLatestScores] = useState([]); // ostatnie 12

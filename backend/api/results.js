@@ -20,13 +20,15 @@ router.get('/', async (req, res) => {
                             score1: { base: "$score1.base", errors: "$score1.errors",errors2: "$score1.errors2", total: "$score1.total" }, // Ocena z 1 kategorii
                             score2: { base: "$score2.base", errors: "$score2.errors",errors2: "$score2.errors2", total: "$score2.total" }, // Ocena z 2 kategorii
                             score3: { base: "$score3.base", errors: "$score3.errors",errors2: "$score3.errors2", total: "$score3.total" }, // Ocena z 3 kategorii
+                            score4: { base: "$score4.base", errors: "$score4.errors",errors2: "$score4.errors2", total: "$score4.total" }, // Ocena z 3 kategorii
                             totalScore: {
                                 $round: [
                                     {
                                         $add: [
                                             { $ifNull: ["$score1.total", 0] },
                                             { $ifNull: ["$score2.total", 0] },
-                                            { $ifNull: ["$score3.total", 0] }
+                                            { $ifNull: ["$score3.total", 0] },
+                                            { $ifNull: ["$score4.total", 0] }
                                         ]
                                     },
                                     2

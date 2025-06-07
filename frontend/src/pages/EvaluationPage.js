@@ -25,6 +25,7 @@ const ResultsByTeamPage = () => {
         FX: 'score1',
         VT: 'score2',
         AD: 'score3',
+        SR: 'score4',
     };
 
     const scoreKey = roleToScoreKey[judgeRole];

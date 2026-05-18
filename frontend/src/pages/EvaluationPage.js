@@ -166,6 +166,13 @@ const ResultsByTeamPage = () => {
             align: 'center',
             render: (_, record) => `${record.name ?? '–'}`,
         },
+        {
+            title: 'Układ',
+            dataIndex: 'routines',
+            key: 'routines',
+            align: 'center',
+            render: (_, record) => `${record.routines ?? '–'}`,
+        },
     ];
 
     if (scoreKey) {

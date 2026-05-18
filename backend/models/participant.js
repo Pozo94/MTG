@@ -8,6 +8,7 @@ const participantSchema = new mongoose.Schema({
     team: String,
     category:String,
     order:Number,
+    routines:String,
     score1: {
         base: Number,
         errors: Number,

@@ -34,11 +34,11 @@ router.put('/:_id', async (req, res) => {
         participant.totalScore = Number((t1 + t2 + t3 + t4).toFixed(2));
 
         await participant.save();
-        //const io = req.app.get('io');
-        // if (io) {
-        //     io.emit('scoresUpdated');
-        //
-        // }
+        const io = req.app.get('io');
+        if (io) {
+            io.emit('scoresUpdated');
+
+        }
 
         res.status(200).json({ message: 'Zawodnik zaktualizowany pomyślnie.' });
     } catch (err) {

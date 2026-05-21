@@ -206,6 +206,13 @@ const ResultsByTeamPage = () => {
                 key: `${scoreKey}_total`,
                 align: 'center',
                 render: (obj) => (obj && typeof obj.total === 'number' ? obj.total.toFixed(2) : '–'),
+            },
+            {
+                title: 'Suma punktów',
+                    dataIndex: 'totalScore',
+                key: 'totalScore',
+                align: 'center',
+                render: (value) => value ?? '–',
             }
         );
     }

@@ -85,7 +85,7 @@ const ResultsPage = () => {
             p.category === selectedCategory
         );
     };
-    const categoriesWithSr = ['Grupa naborowa A', 'Grupa naborowa B','Grupa naborowa C'];
+    const categoriesWithSr = ['Nabór 2019', 'Nabór 2020'];
     const base_columns = [
         {
             title: 'Miejsce',

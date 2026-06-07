@@ -29,7 +29,17 @@ const ResultsPage = () => {
         2: '🥈',
         3: '🥉',
     };
+    const assignPlaces = (participants) => {
+        if (!participants || participants.length === 0) return [];
 
+        return [...participants]
+            .sort((a, b) => (b.totalScore ?? 0) - (a.totalScore ?? 0))
+            .map((participant, index) => ({
+                ...participant,
+                place: index + 1,
+                key: index,
+            }));
+    };
     const assignPodiumPlaces = (participants) => {
         if (!participants || participants.length === 0) return [];
 
@@ -144,7 +154,7 @@ const ResultsPage = () => {
         ...(categoriesWithSr.includes(selectedCategory)? [sr_column]:[]),
         total_column
     ]
-    const podiumResults = assignPodiumPlaces(filteredParticipants());
+    const podiumResults = assignPlaces(filteredParticipants());
     return (
         <div style={{ textAlign: 'center', padding: 30 }}>
             <Title level={2} style={{ textAlign: 'center', color: '#faad14', marginBottom: 40 }}>

@@ -102,7 +102,7 @@ const ResultsPage = () => {
             dataIndex: 'place',
             key: 'place',
             align: 'center',
-            render: (place) => `${placeToEmoji[place] || ''} `,
+            render: (place) => `${placeToEmoji[place] || place} `,
         },
         {
             title: 'Imię i nazwisko',
@@ -126,7 +126,7 @@ const ResultsPage = () => {
             render: (obj) => (obj && typeof obj.total === 'number') ? obj.total : '–',
         },
         {
-            title: categoriesWithSr.includes(selectedCategory) ? 'Drążek' : 'Dodatkowy Przyrząd',
+            title: categoriesWithSr.includes(selectedCategory) ? 'Drążek' : 'Równoważnia',
             dataIndex: 'score3',
             key: 'score3',
             align: 'center',

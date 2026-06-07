@@ -22,7 +22,10 @@ const DashboardPage = () => {
                     marginBottom: '40px',
                 }}
             >
-                <img alt={"Logo"} src={"banner MTG.png"}style={{width: '80%', height: 'auto',maxWidth:'1000px'}}/>
+                {/* <img alt={"Logo"} src={"banner MTG.png"}style={{width: '80%', height: 'auto',maxWidth:'1000px'}}/>*/}
+                <h2>
+                    Zawody Gimnastyczne Zabrze 13.06.2026
+                </h2>
             </Title>
             <LiveScoreboard/>
         </div>

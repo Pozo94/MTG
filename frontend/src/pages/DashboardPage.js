@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from 'antd';
 import LiveScoreboard from "../components/LiveScoreBoard";
+import {TrophyOutlined} from "@ant-design/icons";
 const { Title } = Typography;
 
 const DashboardPage = () => {
@@ -23,9 +24,10 @@ const DashboardPage = () => {
                 }}
             >
                 {/* <img alt={"Logo"} src={"banner MTG.png"}style={{width: '80%', height: 'auto',maxWidth:'1000px'}}/>*/}
-                <h2>
+                <Title level={2} style={{ textAlign: 'center', color: '#faad14', marginBottom: 40 }}>
+                    <TrophyOutlined style={{ marginRight: 10 }} />
                     Zawody Gimnastyczne Zabrze 13.06.2026
-                </h2>
+                </Title>
             </Title>
             <LiveScoreboard/>
         </div>

@@ -26,7 +26,7 @@ const DashboardPage = () => {
                 {/* <img alt={"Logo"} src={"banner MTG.png"}style={{width: '80%', height: 'auto',maxWidth:'1000px'}}/>*/}
                 <Title level={2} style={{ textAlign: 'center', color: '#faad14', marginBottom: 40 }}>
                     <TrophyOutlined style={{ marginRight: 10 }} />
-                    Puchar Prezesa Klubu Sportowego Iskra Zabrze w Gimnastyce Sportowej 13.06.2026!
+                    Puchar Prezesa Klubu Sportowego Iskra Zabrze w Gimnastyce Sportowej 13.06.2026
                 </Title>
             </Title>
             <LiveScoreboard/>
